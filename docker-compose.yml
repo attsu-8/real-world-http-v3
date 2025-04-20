@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: go-app
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
+    tty: true         # 標準入出力を有効にしておく
+    stdin_open: true  # `docker attach` や exec に対応できるように
